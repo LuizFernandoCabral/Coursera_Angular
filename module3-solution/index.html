@@ -21,7 +21,7 @@
 
     <!-- found-items should be implemented as a component -->
     <found-items found="narrow.found" on-remove="narrow.removeItemFromFound(index)"></found-items>
-    <div ng-if="narrow.found.length > 0">Nothing found!</div>
+    <div ng-if="narrow.found.length === 0">Nothing found!</div>
   </div>
 
 </body>

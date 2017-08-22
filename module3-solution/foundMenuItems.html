@@ -1,8 +1,9 @@
 <div style="display: inline-block;">
-	<ol>
+	<ul>
 	  <li ng-repeat="item in foundCtrl.found">
-	    [{{ item.name }}] {{ item.description }}
+	    <b>[item.short_name] - {{ item.name }}</b>
+	    <p>{{ item.description }}
 	    <button ng-click="foundCtrl.onRemove({index: $index});" class="btn btn-danger">Don't want this one!</button>
 	  </li>
-	</ol>
+	</ul>
 </div>
