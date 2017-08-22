@@ -61,11 +61,13 @@ function MenuSearchService($http, ApiBasePath) {
       url: (ApiBasePath + "/menu_items.json")
     }).then (function (result) {
       let returnList = [];
-      result.data.menu_items.forEach(function (menuItem, index){
-        if (menuItem.description.includes(searchTerm)) {
-          returnList.push(menuItem);
-        }
-      });
+      if (searchTerm !== undefined && searchTerm.length > 0) {
+        result.data.menu_items.forEach(function (menuItem, index){
+          if (menuItem.description.includes(searchTerm)) {
+            returnList.push(menuItem);
+          }
+        });
+      }
       return returnList;
     });
 
