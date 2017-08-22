@@ -1,7 +1,7 @@
 <div style="display: inline-block;">
 	<ul>
 	  <li ng-repeat="item in foundCtrl.found">
-	    <b>[item.short_name] - {{ item.name }}</b>
+	    <b>[{{item.short_name}}] - {{ item.name }}</b>
 	    <p>{{ item.description }}
 	    <button ng-click="foundCtrl.onRemove({index: $index});" class="btn btn-danger">Don't want this one!</button>
 	  </li>
