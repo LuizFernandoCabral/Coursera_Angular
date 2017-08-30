@@ -18,7 +18,10 @@ function RegistrationController(UserService) {
   }
 
   $ctrl.submit = function () {
-    $ctrl.validateFavDish("");
+    var fakenext = {
+      key:""
+    };
+    $ctrl.validateFavDish(fakenext);
   	UserService.signup($ctrl.user);
     $ctrl.saved = true;
   };
