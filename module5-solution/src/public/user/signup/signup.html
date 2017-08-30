@@ -1,9 +1,10 @@
 <div class="container">
   <fieldset>
     <legend style="color:white">Registration</legend>
-    <form name='regForm' novalidate>
+    <form name='regForm' class="form-vertical" novalidate>
 
-      <input type="text" name="firstName" placeholder="First Name"
+    <label for="firstName">First Name *</label>
+      <input type="text" class="form-control ng-untouched ng-empty ng-invalid ng-invalid-required" name="firstName" placeholder="Enter First Name"
         ng-model="regCtrl.user.firstName"
         required>
         <span
@@ -12,7 +13,8 @@
         </span>
         <br>
 
-      <input type="text" name="lastName" placeholder="Last Name"
+    <label for="lastName">Last Name *</label>
+      <input type="text" class="form-control ng-untouched ng-empty ng-invalid ng-invalid-required" name="lastName" placeholder="Enter Last Name"
         ng-model="regCtrl.user.lastName"
         required>
         <span
@@ -21,7 +23,8 @@
         </span>
         <br>
 
-      <input type="email" name="email" placeholder="Email"
+    <label for="email">E-mail *</label>
+      <input type="email" class="form-control ng-untouched ng-empty ng-invalid ng-invalid-required" name="email" placeholder="Enter Email"
         ng-model="regCtrl.user.email"
         required>
         <span ng-if="regForm.email.$invalid && regForm.email.$touched">
@@ -29,7 +32,8 @@
         </span>
         <br>
 
-      <input type="text" name="phone" placeholder="Phone ###-###-####"
+    <label for="Phone Number">Phone Number *</label>
+      <input type="text" class="form-control ng-untouched ng-empty ng-invalid ng-invalid-required" name="phone" placeholder="Enter Phone (###-###-####)"
         ng-model="regCtrl.user.phone"
         pattern="(\d{3})-(\d{3})-(\d{4})">
         <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
@@ -37,7 +41,8 @@
         </span>
         <br>
 
-      <input type="text" name="favDish" placeholder="Favorite dish - Short Name"
+    <label for="favDish">Favorite Dish *</label>
+      <input type="text" class="form-control ng-untouched ng-empty ng-invalid ng-invalid-required" name="favDish" placeholder="Favorite dish - Short Name"
         ng-model="regCtrl.user.favDish"
         on-keypress="regCtrl.validateFavDish($event)"
         required>
@@ -46,7 +51,7 @@
           Favorite dish required
         </span>
        <span
-          ng-if="regCtrl.invalidFavDish">
+          ng-if="regCtrl.invalidFavDish && !(regForm.favDish.$error.required && regForm.favDish.$touched)">
           No such menu number exists
         </span>
         <br>
